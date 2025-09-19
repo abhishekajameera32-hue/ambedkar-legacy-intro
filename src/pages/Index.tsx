@@ -1,14 +1,21 @@
 // Main Ambedkar Experience App
 
 import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Navigation from '../components/Navigation';
+import LoadingIntro from '../components/LoadingIntro';
 import Home from './Home';
+import Roadmap from './Roadmap';
+import Tokenomics from './Tokenomics';
+import Revolution from './Revolution';
+import Community from './Community';
 import ConstitutionalGame from '../components/ConstitutionalGame';
 import ExperimentPage from '../components/ExperimentPage';
 import VoiceIntro from '../components/VoiceIntro';
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState('home');
+  const [showIntro, setShowIntro] = useState(true);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -46,6 +53,14 @@ const Index = () => {
         );
       case 'experiment':
         return <ExperimentPage />;
+      case 'roadmap':
+        return <Roadmap />;
+      case 'tokenomics':
+        return <Tokenomics />;
+      case 'revolution':
+        return <Revolution />;
+      case 'community':
+        return <Community />;
       case 'legacy':
         return (
           <div className="min-h-screen flex items-center justify-center">
@@ -78,6 +93,14 @@ const Index = () => {
         return <Home onNavigate={setCurrentPage} />;
     }
   };
+
+  if (showIntro) {
+    return (
+      <AnimatePresence>
+        <LoadingIntro onLoadingComplete={() => setShowIntro(false)} />
+      </AnimatePresence>
+    );
+  }
 
   return (
     <div className="min-h-screen">
