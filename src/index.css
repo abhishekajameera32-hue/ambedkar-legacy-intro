@@ -2,95 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Ambedkar Constitutional Theme - Design System
+Inspired by constitutional law, justice, and social transformation */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Constitutional Theme Colors */
+    --background: 210 20% 98%;
+    --foreground: 215 28% 17%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --constitutional-blue: 215 84% 32%;
+    --constitutional-blue-light: 215 84% 45%;
+    --constitutional-blue-dark: 215 84% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --justice-gold: 45 93% 58%;
+    --justice-gold-light: 45 93% 68%;
+    --justice-gold-dark: 45 93% 48%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --dignity-maroon: 0 45% 35%;
+    --dignity-maroon-light: 0 45% 45%;
+    --dignity-maroon-dark: 0 45% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --wisdom-ivory: 45 22% 92%;
+    --wisdom-ivory-light: 45 22% 96%;
+    --wisdom-ivory-dark: 45 22% 88%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --transformation-purple: 260 60% 45%;
+    --transformation-purple-light: 260 60% 55%;
+    --transformation-purple-dark: 260 60% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Semantic Design System */
+    --primary: var(--constitutional-blue);
+    --primary-foreground: var(--wisdom-ivory);
+    --primary-hover: var(--constitutional-blue-light);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --secondary: var(--justice-gold);
+    --secondary-foreground: var(--constitutional-blue-dark);
+    --secondary-hover: var(--justice-gold-light);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --accent: var(--transformation-purple);
+    --accent-foreground: var(--wisdom-ivory);
+    --accent-hover: var(--transformation-purple-light);
 
-    --radius: 0.5rem;
+    --hero: var(--dignity-maroon);
+    --hero-foreground: var(--wisdom-ivory);
+    --hero-hover: var(--dignity-maroon-light);
 
-    --sidebar-background: 0 0% 98%;
+    --card: var(--wisdom-ivory);
+    --card-foreground: var(--foreground);
+    --card-border: var(--constitutional-blue);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --muted: var(--wisdom-ivory-dark);
+    --muted-foreground: 215 16% 46%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --border: hsl(var(--constitutional-blue) / 0.2);
+    --input: var(--wisdom-ivory-dark);
+    --ring: var(--constitutional-blue);
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--wisdom-ivory);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Gradients */
+    --gradient-constitutional: linear-gradient(135deg, hsl(var(--constitutional-blue)), hsl(var(--constitutional-blue-light)));
+    --gradient-justice: linear-gradient(135deg, hsl(var(--justice-gold)), hsl(var(--justice-gold-light)));
+    --gradient-wisdom: linear-gradient(135deg, hsl(var(--transformation-purple)), hsl(var(--constitutional-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dignity-maroon)), hsl(var(--dignity-maroon-light)));
+    
+    /* Ambedkar Background Gradients */
+    --bg-constitutional: linear-gradient(135deg, hsl(var(--wisdom-ivory)) 0%, hsl(var(--constitutional-blue) / 0.05) 50%, hsl(var(--justice-gold) / 0.08) 100%);
+    --bg-hero: linear-gradient(135deg, hsl(var(--constitutional-blue-dark)) 0%, hsl(var(--dignity-maroon)) 50%, hsl(var(--transformation-purple-dark)) 100%);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    /* Shadows with Constitutional Colors */
+    --shadow-constitutional: 0 10px 30px -10px hsl(var(--constitutional-blue) / 0.3);
+    --shadow-justice: 0 10px 30px -10px hsl(var(--justice-gold) / 0.3);
+    --shadow-wisdom: 0 20px 40px -15px hsl(var(--transformation-purple) / 0.4);
 
-    --sidebar-border: 220 13% 91%;
+    --radius: 0.75rem;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations & Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark mode constitutional theme */
+    --background: 215 28% 8%;
+    --foreground: 210 20% 88%;
+    
+    --constitutional-blue: 215 84% 55%;
+    --justice-gold: 45 93% 65%;
+    --dignity-maroon: 0 45% 55%;
+    --wisdom-ivory: 45 22% 15%;
+    --transformation-purple: 260 60% 65%;
+    
+    --card: hsl(var(--wisdom-ivory));
+    --muted: hsl(var(--wisdom-ivory-dark));
+    --border: hsl(var(--constitutional-blue) / 0.3);
+    
+    --bg-constitutional: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--constitutional-blue) / 0.1) 50%, hsl(var(--justice-gold) / 0.05) 100%);
+    --bg-hero: linear-gradient(135deg, hsl(var(--constitutional-blue-dark)) 0%, hsl(var(--dignity-maroon-dark)) 50%, hsl(var(--transformation-purple-dark)) 100%);
   }
 }
 
@@ -100,6 +110,73 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--bg-constitutional);
+    min-height: 100vh;
+  }
+
+  /* Ambedkar Motion Animations */
+  @keyframes ambedkar-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-10px) rotate(1deg); 
+    }
+  }
+  
+  @keyframes coin-shine {
+    0% { 
+      transform: rotateY(0deg) scale(1);
+      box-shadow: 0 0 20px hsl(var(--justice-gold) / 0.5);
+    }
+    50% { 
+      transform: rotateY(180deg) scale(1.05);
+      box-shadow: 0 0 40px hsl(var(--justice-gold) / 0.8);
+    }
+    100% { 
+      transform: rotateY(360deg) scale(1);
+      box-shadow: 0 0 20px hsl(var(--justice-gold) / 0.5);
+    }
+  }
+  
+  @keyframes constitution-glow {
+    0%, 100% { 
+      box-shadow: 0 0 30px hsl(var(--constitutional-blue) / 0.4);
+    }
+    50% { 
+      box-shadow: 0 0 50px hsl(var(--constitutional-blue) / 0.7);
+    }
+  }
+
+  @keyframes justice-pulse {
+    0%, 100% { 
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    50% { 
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+  }
+
+  /* Constitutional Scroll Animations */
+  @keyframes scroll-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Voice Wave Animation */
+  @keyframes voice-wave {
+    0%, 100% { height: 20px; }
+    25% { height: 40px; }
+    50% { height: 60px; }
+    75% { height: 30px; }
   }
 }
